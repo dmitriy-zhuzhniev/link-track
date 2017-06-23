@@ -1,0 +1,33 @@
+App\Domain\Click\Click:
+  type: entity
+  table: click
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: NONE
+  fields:
+    ua:
+      type: string
+      column: ua
+    ip:
+      type: string
+      column: ip
+    ref:
+      type: string
+      column: ref
+    param1:
+      type: string
+      column: param1
+    param2:
+      type: string
+      column: param2
+    error:
+      type: integer
+      column: error
+    badDomain:
+      type: integer
+      column: bad_domain
+  uniqueConstraints:
+    unique_idx:
+      columns: [ ua, ip, ref ]
